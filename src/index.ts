@@ -11,3 +11,46 @@ printObject({
     name: "Bruce Wayne",
     nick: "Batman"
 });
+
+// Types
+
+// primitives: boolean, number, string
+let on: boolean = true || false;
+let myName: string = "Gustavo";
+let age: number = 20;
+let height: number = 1.78
+
+// null and undefined
+let nullOnly: null = null;
+let undefinedOnly: undefined = undefined;
+
+// any and void
+let everything: any = 10;
+everything = "HY";
+everything = {
+    size: 20
+}
+
+const query = (): void => {}  // dont have return
+
+// object
+let product: object = {
+     id: 3,
+     name: "Mouse",
+     price: 20.0
+}
+
+// type
+type ShopProduct = {
+     name: string,
+     price: number,
+     quantity: number
+}
+
+// this have to be all ShopProduct keys and it's respective types...
+const myProduct: ShopProduct = {
+     name: "Product", // must be a string
+     price: 20.0, // must be a number
+     quantity: 10
+}
+ 
