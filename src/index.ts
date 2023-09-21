@@ -63,3 +63,10 @@ let multiType: (string | number)[] = ["one", 1, "two", 2];
 
 // tuples
 let bill:[string, number, number] = ["water", 199.9, 11125464];
+
+// array methods - same as javascript
+
+// ...
+
+// Dates
+let birthdate: Date = new Date("2022-12-01 05:00");
