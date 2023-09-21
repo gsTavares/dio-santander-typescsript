@@ -62,7 +62,7 @@ let data2: Array<string> = ["four", "five", "six"];
 let multiType: (string | number)[] = ["one", 1, "two", 2];
 
 // tuples
-let bill:[string, number, number] = ["water", 199.9, 11125464];
+let bill: [string, number, number] = ["water", 199.9, 11125464];
 
 // array methods - same as javascript
 
@@ -70,3 +70,27 @@ let bill:[string, number, number] = ["water", 199.9, 11125464];
 
 // Dates
 let birthdate: Date = new Date("2022-12-01 05:00");
+
+// functions
+const sum = (x: number, y: number): number => {
+    return x + y;
+}
+
+const sayHello = (name: string): string => {
+    return "Hello " + name;
+}
+
+console.log(sayHello("user"));
+
+// multi type functions
+const call = (phone: number | string): number | string => {
+    return phone;
+}
+
+console.log(call(99283123));
+console.log(call("(17)9182903812"));
+
+// async functions
+const httpCall = async (id: number): Promise<string> => {
+    return "OK";
+}
