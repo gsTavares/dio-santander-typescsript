@@ -53,3 +53,13 @@ const myProduct: ShopProduct = {
     price: 20.0, // must be a number
     quantity: 10
 }
+
+// arrays
+let data: string[] = ["one", "two", "three"];
+let data2: Array<string> = ["four", "five", "six"];
+
+// multi type array
+let multiType: (string | number)[] = ["one", 1, "two", 2];
+
+// tuples
+let bill:[string, number, number] = ["water", 199.9, 11125464];
