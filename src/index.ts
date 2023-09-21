@@ -31,26 +31,25 @@ everything = {
     size: 20
 }
 
-const query = (): void => {}  // dont have return
+const query = (): void => { }  // dont have return
 
 // object
 let product: object = {
-     id: 3,
-     name: "Mouse",
-     price: 20.0
+    id: 3,
+    name: "Mouse",
+    price: 20.0
 }
 
 // type
 type ShopProduct = {
-     name: string,
-     price: number,
-     quantity: number
+    name: string,
+    price: number,
+    quantity: number
 }
 
 // this have to be all ShopProduct keys and it's respective types...
 const myProduct: ShopProduct = {
-     name: "Product", // must be a string
-     price: 20.0, // must be a number
-     quantity: 10
+    name: "Product", // must be a string
+    price: 20.0, // must be a number
+    quantity: 10
 }
- 
