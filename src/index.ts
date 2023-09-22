@@ -128,7 +128,7 @@ const bot: Robot | Robot2 = {
  */
 class Character {
     protected _name?: string;
-     readonly strength: number;
+    readonly strength: number;
     skill: number;
 
     constructor(name: string, strength: number, skill: number) {
@@ -155,3 +155,12 @@ class Magician extends Character {
 const character: Character = new Character("Ryu", 10, 98);
 const magicial: Magician = new Magician("Ryu", 10, 20, 100);
 character.attack();
+
+// generics
+
+const concatArray = <T>(...items: T[]): T[] =>  {
+    return new Array().concat(...items);
+}
+
+const numArray = concatArray<number[]>([1,5], [3]);
+const strArray = concatArray<string[]>(["a", "b"], ["d"]);
