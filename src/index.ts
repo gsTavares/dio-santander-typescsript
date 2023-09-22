@@ -94,3 +94,26 @@ console.log(call("(17)9182903812"));
 const httpCall = async (id: number): Promise<string> => {
     return "OK";
 }
+
+// interface x type
+type Robot = {
+    id: number,
+    name: string,
+    readonly secret: string
+}
+
+// interface are usually used with classes
+interface Robot2 {
+    id: number,
+    name: string,
+    readonly secret: string
+}
+
+const bot: Robot | Robot2 = {
+    id: 10,
+    name: "first bot",
+    secret: "123098"
+}
+
+// secret can't be modified
+// bot.secret = "abcde" --> error
