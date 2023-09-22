@@ -117,3 +117,41 @@ const bot: Robot | Robot2 = {
 
 // secret can't be modified
 // bot.secret = "abcde" --> error
+
+/**
+ * Classes
+ * 
+ * Data modifiers
+ * - public - free
+ * - private - only into class
+ * - protected - only into class and subclasses
+ */
+class Character {
+    protected _name?: string;
+     readonly strength: number;
+    skill: number;
+
+    constructor(name: string, strength: number, skill: number) {
+        this._name = name;
+        this.strength = strength;
+        this.skill = skill;
+    }
+
+    attack(): void {
+        console.log(`Attack with ${this.strength} points`);
+    }
+}
+
+// Character - Superclass
+// Magician - Subclass
+class Magician extends Character {
+    magicPoints: number;
+    constructor(name: string, strength: number, skill: number, magicPoints: number) {
+        super(name, strength, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+
+const character: Character = new Character("Ryu", 10, 98);
+const magicial: Magician = new Magician("Ryu", 10, 20, 100);
+character.attack();
