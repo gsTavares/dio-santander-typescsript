@@ -164,3 +164,49 @@ const concatArray = <T>(...items: T[]): T[] =>  {
 
 const numArray = concatArray<number[]>([1,5], [3]);
 const strArray = concatArray<string[]>(["a", "b"], ["d"]);
+
+// decorators
+
+function ShowName(target: any) {
+    console.log(target);
+}
+
+// When the memory recognizes this class, then the ShowName method will be called
+@ShowName
+class Employee {}
+
+function ApiVersion(version: string) {
+    return (target: any) => {
+        Object.assign(target.prototype, {_version: version})
+    }
+}
+
+function MinLength(length: number) {
+    return (target: any, key: string) => {
+        let _value = target[key];
+        const getter = () => _value;
+        const setter = (value: string) => {
+            if(value.length < length)
+                throw new Error(`Min length for ${key} is ${length}`)
+            else _value = value;
+        }
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        })
+    }
+}
+
+@ApiVersion("1.10")
+class Api {
+    @MinLength(3)
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+const api = new Api("products");
+console.log(api.name, api._version);
+
+api.name = "a";
